@@ -3,6 +3,34 @@ const EMPTY_HEART = '♡'
 const FULL_HEART = '♥'
 
 // Your JavaScript code goes here!
+//const modalH = document.querySelector('div')
+//modalH.hidden = true
+const likes = document.querySelectorAll('.like-glyph')
+ 
+
+function likesCallBack(e) {
+  const heart = e.target;
+  mimicServerCall()
+  .then((res) => {
+    heart.innerText = FULL_HEART
+    //console.log(res)
+  })
+  .catch((res) => {
+    //modalH.hidden = false
+  })
+  
+}
+for (const glyph of likes) {
+  glyph.addEventListener('click', likesCallBack)
+  
+}
+
+
+
+
+
+
+
 
 
 
